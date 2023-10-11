@@ -10,13 +10,13 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 host = socket.gethostbyname(socket.gethostname())
 port = 4800
-print(host)
 sock.bind((host,port))
 sock.listen(4)
+print('server is started at', str(host)+":"+str(port))
 while True:
     clientSock, address = sock.accept()
 
-    print("recieved connection request from " % str(address))
+    print("recieved connection request from ", str(address))
 
     message = "Thanks for connecting" + '\r\n'
     
